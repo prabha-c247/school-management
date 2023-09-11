@@ -1,0 +1,54 @@
+$bgColor: #3495eb;
+$text:antiquewhite;
+// $nav:#1FA49B;
+$nav:#FF595A;
+
+#sidebar{
+
+}
+.section{
+    width: 100%;
+    margin: auto;
+    display: grid;   
+    padding: 1%;
+    margin-bottom: 5%;
+    color: white;
+    font-weight: 400;
+    line-height: 25px;  
+    justify-content: space-evenly;   
+    align-items: self-end;  
+    .nav_link{
+        color:white;
+    }
+}
+section Nav:active{
+    background: white;
+    color: black;
+} 
+
+.user-info{
+    color: $nav;
+    font-weight: 700;    
+    margin: auto;
+    // padding: 7%;
+    align-items: center;   
+    .user-image{
+        // width: 20%;
+        // height: 20%;
+        margin-right: 2%;
+        color: white;
+    }
+}
+// .line {
+//     width: 100%;
+//     height: 1px;
+//     background-color: #ccc;
+//     margin: 20px 0;
+//   }
+// .section3{
+//       margin-top: 15%; 
+// }
+// #sidebar{   
+//     padding: 1%;   
+   
+// }
