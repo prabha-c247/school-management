@@ -6,6 +6,7 @@ import SearchBar from "../../components/common/serachbar/SearchBar";
 import {TotalBalance,CourseTransitionHistory,OverallSelling, MostSellingPlan,} from '../../components/dashboard-tables/Table';
 import LineChart from "../../components/chart/LineChart";
 
+
 const AnalyticsFinance = () => {
   return (
     <>

@@ -6,6 +6,7 @@ interface DashboardCardProps {
   content?: React.ReactNode;
   search?: React.ReactNode;
   total?: number;
+  filter?:React.ReactNode;
 }
 
 const DashboardCard: React.FC<DashboardCardProps> = ({
@@ -13,6 +14,7 @@ const DashboardCard: React.FC<DashboardCardProps> = ({
   search,
   content,
   total,
+  filter
 }) => {
   return (
     <Card>

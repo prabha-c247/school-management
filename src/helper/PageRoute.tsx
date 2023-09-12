@@ -1,5 +1,5 @@
 export const LOGIN = "/login";
-export const DASHBOARD = "/";
+export const HOME = "/";
 export const ANALYTICS = "analytics_finance";
 export const CREATE_PLANS = "plans";
 export const HISTORY = "plan_history";

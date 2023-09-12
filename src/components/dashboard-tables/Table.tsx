@@ -1,7 +1,15 @@
-import React from "react";
+import React,{useState} from "react";
 import { Table,Image } from "react-bootstrap";
+// filter
+import Filter from "../common/filter/Filter";
+
+interface FilterProps {
+  filterYear?:string;
+  setFilterYear?:string;
+}
 
 export const TotalBalance = () => {
+
   return (
    <div>
     <h6>Transition History</h6>
@@ -23,7 +31,7 @@ export const TotalBalance = () => {
   );
 };
 
-export const CourseTransitionHistory = () => {
+export const CourseTransitionHistory: React.FC<FilterProps> = ({filterYear,setFilterYear}) => {
   return (
     <Table striped bordered hover variant="primary">
       <thead>
@@ -104,3 +112,27 @@ export const OverallSelling = () => {
   );
 };
 
+export const TableContainer = () => {
+  // State for filtering logic
+  const itemList = [
+    "Apple",
+    "Orange",
+    "Banana",
+    "Cherry",
+    "Milk",
+    "Peanuts",
+    "Butter",
+    "Tomato"
+  ];
+  // const [filterYear, setFilterYear] = useState(itemList);//in the usestate keep the res of getapi
+
+  return (
+    <div>
+      {/* <Filter filterYear={filterYear} setFilterYear={setFilterYear} /> */}
+      <TotalBalance />
+      {/* <CourseTransitionHistory filterYear={filterYear}/> */}
+      <MostSellingPlan />
+      <OverallSelling />
+    </div>
+  );
+};

@@ -1,43 +1,52 @@
 import React from "react";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 //css
-import '../assets/css/main.scss';
+import "../assets/css/main.scss";
 //auth
 import Login from "../pages/authentication/login/Login";
-import Dashboard from "../pages/dashboard/Dashboard";
 import "../assets/css/main.scss";
 //route
-import {LOGIN,DASHBOARD,ANALYTICS, CREATE_PLANS, HISTORY} from "../helper/PageRoute";
+import {
+  LOGIN,
+  ANALYTICS,
+  CREATE_PLANS,
+  HISTORY,  
+} from "../helper/PageRoute";
 import AnalyticsFinance from "../pages/analytics-finance/AnalyticsFinance";
 import CreatePlan from "../pages/plans/create-plans/CreatePlan";
 import PlanHistory from "../pages/plans/plan-history/PlanHistory";
 
+import { Container, Row, Col } from "react-bootstrap";
 
+//sidebar
+import Sidebar from "../components/sidebar/Sidebar";
 
 const Home = () => {
+  // const handleSearch = (query: string) => {
+  //   // Implement your search logic here
+  //   console.log(`Searching for: ${query}`);
+  // };
   return (
-    <div className="main">   
-        <BrowserRouter>       
-      <Routes>
-      <Route path={LOGIN} element={<Login/>}/>
-        <Route path={DASHBOARD} element={ <Dashboard/>}>
-          <Route index element={<Dashboard/>} />      
-          <Route path={ANALYTICS} element={<AnalyticsFinance/>} />
-          <Route path={CREATE_PLANS} element={<CreatePlan />}>              
-              <Route index element={<CreatePlan />} />
-              <Route path={HISTORY} element={<PlanHistory />} />            
-            </Route>
-            {/* <Route path={All_SCHOOL} element={<School />}>              
-              <Route index element={<School />} />
-              <Route path={ADD_SCHOOL} element={<AddSchool />} />
-              <Route path={VIEW_SCHOOL} element={<View_School />} />
-            </Route> */}      
-          {/* <Route path="*" element={<NoPage />} /> */}
-        </Route>
-      </Routes>
-    </BrowserRouter>
-    </div>
-  )
-}
+    <BrowserRouter>
+      <Container fluid className="main">
+        <Row>
+          <Col md={3} bg="light" className="d-none d-md-block">
+            <Sidebar />
+          </Col>
+          <Col md={9} id="content" bg="dark">
+            <Routes>
+              <Route path={LOGIN} element={<Login />} />
+              <Route path={ANALYTICS} element={<AnalyticsFinance />} />
+              <Route path={CREATE_PLANS}>
+                <Route index element={<CreatePlan />} />
+                <Route path={HISTORY} element={<PlanHistory />} />
+              </Route>
+            </Routes>
+          </Col>
+        </Row>
+      </Container>
+    </BrowserRouter>   
+  );
+};
 
 export default Home;
