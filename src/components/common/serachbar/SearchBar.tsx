@@ -32,23 +32,25 @@ const SearchBar =()=>{
     //     </InputGroup>
     //   </div>
     // </Form>
-    <div>
-    {/* <Form className="">    */}
-       {/* <Form onSubmit={handleSubmit}> */}
-      <InputGroup className="rounded">
-        <FormControl
+    // <form onSubmit={handleSubmit}>
+
+    <InputGroup className="rounded-search">
+      <div className="search-bar">
+      <input
           type="text"
           placeholder="Search"
-          className="mr-sm-2"
+          className="rounded-pill"
           // value={searchValue}
           // onChange={handleInputChange}
         />
-        <Button type="submit" variant="outline-success">
+    
+        <Button type="submit"  className="rounded-pill" variant="outline-success">
           <BsSearch />
-        </Button>
-      </InputGroup>      
-    {/* </Form> */}
-    </div>
+        </Button>      
+        </div>
+    </InputGroup>
+
+  
   );
 };
 

@@ -1,11 +1,12 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Card, Row, Col } from "react-bootstrap";
 
 interface DashboardCardProps {
   heading: string;
   content?: React.ReactNode;
   search?: React.ReactNode;
   total?: number;
+  filter?: React.ReactNode;
 }
 
 const DashboardCard: React.FC<DashboardCardProps> = ({
@@ -13,14 +14,26 @@ const DashboardCard: React.FC<DashboardCardProps> = ({
   search,
   content,
   total,
+  filter,
 }) => {
   return (
     <Card>
       <div className="px-2">
         <Card.Header>
-          <div className="d-flex ">
-            <h6>{heading}</h6> {search}
-          </div>
+          <Row>
+            <Col sm={6}>
+              <h6>{heading}</h6>
+            </Col>
+            <Col sm={6}>
+              <div
+                className="d-flex"
+                style={{ width: "100%", justifyContent: "space-evenly" }}
+              >
+                {search}
+                {filter}
+              </div>
+            </Col>
+          </Row>
           <div>{total}</div>
         </Card.Header>
         <Card.Body style={{ maxHeight: "150px", overflowY: "auto" }}>

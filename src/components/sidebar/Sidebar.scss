@@ -1,43 +1,66 @@
-$bgColor: #3495eb;
-$text:antiquewhite;
+$bgColorTwo: rgb(0, 18, 51);
 // $nav:#1FA49B;
-$nav:#FF595A;
+$text: #ff595a;
+$text2: #f2f7a1;
 
-#sidebar{
-
+#sidebar {
+  position: fixed;
+  overflow-y: auto;
+  background: #088395;
+  // height: 100vh;
+  color: #f2f7a1;
+  width: 250px;
+  height: 100%;
+  z-index: 1;
+  margin-left: -1%;
 }
-.section{
-    width: 100%;
-    margin: auto;
-    display: grid;   
-    padding: 1%;
-    margin-bottom: 5%;
-    color: white;
-    font-weight: 400;
-    line-height: 25px;  
-    justify-content: space-evenly;   
-    align-items: self-end;  
-    .nav_link{
-        color:white;
-    }
-}
-section Nav:active{
+.section {
+  width: 100%;
+  margin: auto;
+  display: grid;
+  padding: 1%;
+  margin-bottom: 5%;
+  color: white;
+  font-weight: 400;
+  line-height: 25px;
+  justify-content: space-evenly;
+  align-items: self-end;
+  // .nav_link{
+  //     color:white;
+  //     text-decoration: none;
+  // }
+  Nav active:active {
     background: white;
-    color: black;
-} 
+    color: #088395;
+  }
+}
+.nav-link:active {
+  background: white;
+  color: #088395;
+}
 
-.user-info{
-    color: $nav;
-    font-weight: 700;    
-    margin: auto;
-    // padding: 7%;
-    align-items: center;   
-    .user-image{
-        // width: 20%;
-        // height: 20%;
-        margin-right: 2%;
-        color: white;
-    }
+.nav-link {
+  color: black;
+  text-decoration: none;
+}
+@media screen and (max-width: 768px) {
+  #sidebar {
+    width: 100%; /* Full width for small screens */
+  }
+}
+
+.user-info {
+  color: $text2;
+  font-weight: 700;
+  margin: auto;
+  // padding: 7%;
+  align-items: center;
+  .user-image {
+    // width: 20%;
+    // height: 20%;
+    margin-right: 2%;
+    color: white;
+  }
 }
 // .line {
 //     width: 100%;
@@ -46,9 +69,9 @@ section Nav:active{
 //     margin: 20px 0;
 //   }
 // .section3{
-//       margin-top: 15%; 
+//       margin-top: 15%;
 // }
-// #sidebar{   
-//     padding: 1%;   
-   
+// #sidebar{
+//     padding: 1%;
+
 // }

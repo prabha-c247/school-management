@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 //css
 import "./Login.scss";
@@ -7,7 +7,7 @@ const Login = () => {
   const [inputValue, setInputValue] = useState("");
   const [inputType, setInputType] = useState("");
 
-  const handleInputChange = (e:React.ChangeEvent<any>) => {
+  const handleInputChange = (e: React.ChangeEvent<any>) => {
     const value = e.target.value;
 
     // Check if it's a 10-digit number (basic phone number format)
@@ -45,7 +45,7 @@ const Login = () => {
           <img
             src={require("../../../assets/images/login.png")}
             alt="Login User"
-            className="img-fluid"           
+            className="img-fluid"
           />
         </Col>
         <Col md={6} className="form-div">

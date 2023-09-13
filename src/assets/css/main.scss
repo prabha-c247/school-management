@@ -14,10 +14,15 @@ $bgColorTwo:rgb(0,18,51);
   .main {
     background: $bgColorTwo;
     color: $text;
-  }
+      }
   .line {
     width: 100%;
     height: 1px;
     background-color: #ccc;
     margin: 20px 0;
   }
+.plan_btn{
+  border-radius: 50%;
+  padding:1%;
+}
+ 

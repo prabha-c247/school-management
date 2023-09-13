@@ -1,6 +1,28 @@
 
-// .Form{
-//     margin: 3px;
-//     padding: 6px;
-//   color: antiquewhite;
-// }
+.rounded-search{
+    // margin: 1%;
+    // border-radius: 50%;
+}
+.search-bar{
+    display: flex;
+    align-items: center;
+    border: 1px solid #ced4da;
+    border-radius: 25px;
+    padding: 5px;
+    input {
+        border: none;
+        outline: none;
+        flex-grow: 1;
+        padding: 5px;
+        border-radius: 25px;
+      }
+      
+    button {
+        margin-right: 2%;
+        border: none;
+        outline: none;
+      }
+}
+
+
+  
