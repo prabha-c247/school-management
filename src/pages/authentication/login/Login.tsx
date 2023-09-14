@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 //css
-import "./Login.scss";
+import styles from "./Login.module.scss";
 
 const Login = () => {
   const [inputValue, setInputValue] = useState("");
@@ -39,7 +39,7 @@ const Login = () => {
   };
 
   return (
-    <Container className="m-auto">
+    <Container className={styles.mAuto}>
       <Row className="d-flex align-items-center">
         <Col md={6}>
           <img
@@ -48,7 +48,7 @@ const Login = () => {
             className="img-fluid"
           />
         </Col>
-        <Col md={6} className="form-div">
+        <Col md={6} className={styles.formDiv}>
           <Form onSubmit={handleSubmit}>
             <h1>Login</h1>
             <div className="line" />

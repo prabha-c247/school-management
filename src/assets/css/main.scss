@@ -4,16 +4,16 @@
     font-family: 'Roboto', sans-serif;  
 }
 
-$bgColor: #3495eb;
-$text:#FF595A;
-// $bgColorTwo:#0B1827;
-$bgColorTwo:rgb(0,18,51);
 
+$user:#FF595A;
+$font:white;
+$bgColorTwo:rgb(0,18,51);
+$mainFont: #f2f7a1;
 
 
   .main {
     background: $bgColorTwo;
-    color: $text;
+    color: $font;     
       }
   .line {
     width: 100%;

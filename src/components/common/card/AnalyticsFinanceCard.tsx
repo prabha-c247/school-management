@@ -17,11 +17,11 @@ const DashboardCard: React.FC<DashboardCardProps> = ({
   filter,
 }) => {
   return (
-    <Card>
+    <Card className="text-dark">
       <div className="px-2">
         <Card.Header>
-          <Row>
-            <Col sm={6}>
+          <Row className="d-flex text-truncate align-items-center ">
+            <Col sm={6} >
               <h6>{heading}</h6>
             </Col>
             <Col sm={6}>

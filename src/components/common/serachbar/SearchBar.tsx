@@ -2,7 +2,7 @@
 import { Form, FormControl, Button,InputGroup } from "react-bootstrap";
 import { BsSearch } from 'react-icons/bs';
 //css
-import "./SearchBar.scss";
+import styles from "./SearchBar.module.scss";
 
 // interface SearchBarProps {
 //   handleSearch: (query: string) => void;
@@ -33,24 +33,22 @@ const SearchBar =()=>{
     //   </div>
     // </Form>
     // <form onSubmit={handleSubmit}>
-
-    <InputGroup className="rounded-search">
-      <div className="search-bar">
-      <input
-          type="text"
-          placeholder="Search"
-          className="rounded-pill"
-          // value={searchValue}
-          // onChange={handleInputChange}
-        />
     
-        <Button type="submit"  className="rounded-pill" variant="outline-success">
-          <BsSearch />
-        </Button>      
-        </div>
-    </InputGroup>
-
+    <InputGroup >
+    <div className={styles.searchBar}>
+    <input
+        type="text"
+        placeholder="Search"
+        className="rounded-pill"
+        // value={searchValue}
+        // onChange={handleInputChange}
+      />
   
+      <Button type="submit"  className="rounded-pill" variant="outline-success">
+        <BsSearch />
+      </Button>      
+      </div>
+  </InputGroup>
   );
 };
 

@@ -10,22 +10,22 @@ const PlanNavbar = () => {
       <Nav>
         <Nav.Item>
           <Nav.Link
-            eventKey="Create Plans"
+            eventKey=" Plan History"
             as={Link}
-            to={CREATE_PLANS}
-            className="link_nav"
+            to={HISTORY}
+            className="text-light"
           >
-            Create Plans
+            Plan History
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link
-            eventKey=" Plan History"
+            eventKey="Create Plans"
             as={Link}
-            to={HISTORY}
-            className="link_nav"
+            to={CREATE_PLANS}
+            className="text-light"
           >
-            Plan History
+            Create Plans
           </Nav.Link>
         </Nav.Item>
       </Nav>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 //css
-import "./CreatePlan.scss";
+import styles from "./CreatePlan.module.scss";
 //common
 import DynamicFormInput from "../../../components/common/input/DynamicInput";
 //modal
@@ -45,7 +45,7 @@ const CreatePlan: React.FC = () => {
       <Row>
         <Col>
           <PlanNavbar />
-          <Form className="form_plan">
+          <Form className={styles.form_plan}>
             <Row className="mb-3">
               <DynamicFormInput
                 label="Plan Name"
@@ -147,11 +147,11 @@ const CreatePlan: React.FC = () => {
 
             {/* payment method */}
             <Row className="mb-3">
-              <Form.Label className="col-sm-2">Payment Method</Form.Label>
+              <Form.Label>Payment Method</Form.Label>
               {/* Radio buttons for payment method selection */}
               <div className="d-flex">
                 <Form.Check
-                  className="me-2"
+                  className="me-3"
                   type="radio"
                   label="Credit Card"
                   name="paymentMethod"
@@ -163,7 +163,7 @@ const CreatePlan: React.FC = () => {
                   }
                 />
                 <Form.Check
-                  className="me-2"
+                  className="me-3"
                   type="radio"
                   label="PayPal"
                   name="paymentMethod"
@@ -175,7 +175,7 @@ const CreatePlan: React.FC = () => {
                   }
                 />
                 <Form.Check
-                  className="me-2"
+                  className="me-3"
                   type="radio"
                   label="UPI"
                   name="paymentMethod"
@@ -207,7 +207,7 @@ const CreatePlan: React.FC = () => {
                 <Button
                   type="button"
                   variant="primary"
-                  className=" rounded-pill"
+                  className="rounded-pill"
                   onClick={OpenModal}
                 >
                   Plan Preview
@@ -216,7 +216,7 @@ const CreatePlan: React.FC = () => {
                   planPreviewOpen={planPreviewOpen}
                   Hide={HideModal}
                 />
-                <div className="d-flex ">
+                <div className="d-flex">
                   <Button
                     type="button"
                     className="plan_btn me-2 rounded-pill"
