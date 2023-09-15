@@ -5,7 +5,7 @@ import { AiOutlinePlusCircle } from "react-icons/ai";
 //css
 import styles from "./PlanHistory.module.scss";
 //route
-import { CREATE_PLANS,VIEW_PLAN } from "../../../helper/PageRoute";
+import { CREATE_PLANS, VIEW_PLAN } from "../../../helper/PageRoute";
 //component
 import Filter from "../../../components/common/filter/Filter";
 import SearchBar from "../../../components/common/serachbar/SearchBar";
@@ -13,7 +13,7 @@ import SearchBar from "../../../components/common/serachbar/SearchBar";
 const PlanHistory = () => {
   const navigate = useNavigate();
 
-  const tableData=[
+  const tableData = [
     {
       planNo: 1,
       planName: "Gold Plan",
@@ -26,7 +26,7 @@ const PlanHistory = () => {
       planDate: "15-09-2023 06:09 PM",
       planMode: "Deactive",
     },
-     {
+    {
       planNo: 3,
       planName: "Platinum Plan",
       planDate: "23-09-2023 06:09 PM",
@@ -68,8 +68,7 @@ const PlanHistory = () => {
       planDate: "23-09-2023 06:09 PM",
       planMode: "Active",
     },
-
-  ]
+  ];
   return (
     <Container>
       <Row className="mb-3">
@@ -78,10 +77,10 @@ const PlanHistory = () => {
         >
           <h5>Plan History</h5>
           <div className="d-flex align-items-center justify-content-evenly">
-            <div className="mr-3">
+            <div className="me-3">
               <SearchBar />
             </div>
-            <div className="mr-3">
+            <div className="me-3">
               <Filter />
             </div>
             <div>
@@ -109,19 +108,34 @@ const PlanHistory = () => {
               </tr>
             </thead>
             <tbody>
-             {
-              tableData.map((data,index)=>{
-                return(
+              {tableData.map((data, index) => {
+                return (
                   <tr key={index}>
-                  <td>{data.planNo}</td>
-                  <td>{data.planName}</td>
-                  <td>{data.planDate}</td>
-                  <td><Button  className="rounded-pill" variant="primary">{data.planMode}</Button></td>
-                  <td><Button className="rounded-pill" variant="secondary" onClick={()=>{navigate(VIEW_PLAN)}}>View</Button></td>
-                </tr>
-                )
-              })
-             }
+                    <td>{data.planNo}</td>
+                    <td>{data.planName}</td>
+                    <td>{data.planDate}</td>
+                    <td>
+                      <Button
+                        className={`${styles.mode_btn} rounded-pill border-dark`}
+                        variant="outlined"
+                      >
+                        {data.planMode}
+                      </Button>
+                    </td>
+                    <td>
+                      <Button
+                        className={`${styles.view_btn} rounded-pill`}
+                        variant="secondary"
+                        onClick={() => {
+                          navigate(VIEW_PLAN);
+                        }}
+                      >
+                        View
+                      </Button>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </Table>
         </Col>
