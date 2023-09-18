@@ -9,7 +9,7 @@ import PlanPreviewModal from "../../../components/common/modal/PlanPreviewModal"
 import PlanNavbar from "../PlanNavbar";
 
 const CreatePlan: React.FC = () => {
-  const [planPreviewOpen, setPlanPreviewOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const [formData, setFormData] = useState({
     planName: "",
@@ -32,8 +32,8 @@ const CreatePlan: React.FC = () => {
   };
 
   // ModalOpen
-  const OpenModal = () => setPlanPreviewOpen(true);
-  const HideModal = () => setPlanPreviewOpen(false);
+  const OpenModal = () => setModalOpen(true);
+  const HideModal = () => setModalOpen(false);
 
   // const handleSubmit = (e: React.FormEvent) => {
   //   e.preventDefault();
@@ -213,7 +213,7 @@ const CreatePlan: React.FC = () => {
                   Plan Preview
                 </Button>
                 <PlanPreviewModal
-                  planPreviewOpen={planPreviewOpen}
+                  modalOpen={modalOpen}
                   Hide={HideModal}
                 />
                 <div className="d-flex">
