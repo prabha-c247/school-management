@@ -2,9 +2,9 @@ import React from "react";
 import { Nav, Tab } from "react-bootstrap";
 import { Link } from "react-router-dom";
 //routes
-import {  HISTORY } from "../../helper/PageRoute";
+import {All_SCHOOL } from "../../../helper/PageRoute";
 
-const PlanNavbar = () => {
+const SchoolNavbar = () => {
   return (
     <Tab.Container defaultActiveKey="Create Plans">
       <Nav>
@@ -12,20 +12,20 @@ const PlanNavbar = () => {
           <Nav.Link
             eventKey="Plan History"
             as={Link}
-            to={HISTORY}
+            to={All_SCHOOL}
             className="text-light"
           >
-            Plan History
+            All School List
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link
             eventKey="Create Plans"
             // as={Link}
-            // to={CREATE_PLANS}
+            // to={ADD_SCHOOL}
             className="text-light"
           >
-            Create Plans
+            Add School
           </Nav.Link>
         </Nav.Item>
       </Nav>
@@ -33,4 +33,4 @@ const PlanNavbar = () => {
   );
 };
 
-export default PlanNavbar;
+export default SchoolNavbar;

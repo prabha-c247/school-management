@@ -14,7 +14,7 @@ const SinglePlanView = () => {
             Plan Name: <p className={styles.customColor}>GoldPlan</p>
           </Col>
           <Col md={6}>
-            Pricing: <p className={styles.customColor}></p>$15,000
+            Pricing: <p className={styles.customColor}>$15,000</p>
           </Col>
         </Row>
         <Row className="m-4">

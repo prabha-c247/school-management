@@ -50,3 +50,9 @@ export const OverallSellingPlan = () => {
       console.log(err);
     });
 };
+
+
+export const GetAllSchools = (url:string)=>{
+return(axios.get(url)
+);
+};

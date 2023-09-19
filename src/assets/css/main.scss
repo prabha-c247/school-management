@@ -1,19 +1,19 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;  
-}
-
-
 $user:#FF595A;
 $font:white;
 $bgColorTwo:rgb(0,18,51);
 $mainFont: #f2f7a1;
 
 
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;     
+}
   .main {
     background: $bgColorTwo;
-    color: $font;     
+    color: $font;   
+    width: 100%;
+    margin: auto;  
       }
   .line {
     width: 100%;
@@ -25,4 +25,14 @@ $mainFont: #f2f7a1;
   border-radius: 50%;
   padding:1%;
 }
- 
+.school-logo {
+  max-width: 50px;
+  max-height: 50px; 
+  width: auto;
+  height: auto;
+  border-radius: 50%;
+}
+.view_btn{
+  width: 60%;
+  margin: auto;
+}

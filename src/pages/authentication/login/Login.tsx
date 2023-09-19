@@ -1,76 +1,97 @@
-import React, { useState } from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
-//css
-import styles from "./Login.module.scss";
+import React from "react";
+import {
+  Container,
+  Row,
+  Col,
+  Form as BootstrapForm,
+  Button,
+} from "react-bootstrap";
+import { Formik, Field, Form as FormikForm, ErrorMessage } from "formik";
+import { loginSchema } from "../../../helper/formValidation";
 
 const Login = () => {
-  const [inputValue, setInputValue] = useState("");
-  const [inputType, setInputType] = useState("");
-
-  const handleInputChange = (e: React.ChangeEvent<any>) => {
-    const value = e.target.value;
-
-    // Check if it's a 10-digit number (basic phone number format)
-    if (/^\d{10}$/.test(value)) {
-      setInputType("phone");
-    } else if (/^\S+@\S+\.\S+$/.test(value)) {
-      // Check if it's an email address
-      setInputType("email");
-    } else {
-      setInputType("invalid");
-    }
-
-    setInputValue(value);
-  };
-
   const handleSubmit = (e: React.ChangeEvent<any>) => {
     e.preventDefault();
-
-    if (inputType === "phone") {
-      // Handle phone number input
-      console.log("Phone Number:", inputValue);
-    } else if (inputType === "email") {
-      // Handle email input
-      console.log("Email:", inputValue);
-    } else {
-      // Handle invalid input
-      console.log("Invalid input");
-    }
   };
 
   return (
-    <Container className={styles.mAuto}>
-      <Row className="d-flex align-items-center">
-        <Col md={6}>
-          <img
-            src={require("../../../assets/images/login.png")}
-            alt="Login User"
-            className="img-fluid"
-          />
+    <Container className="mw-100 p-4">
+      <Row className="h-100 align-items-center ">
+        <Col md={6} className="d-flex align-items-center mb-3">
+          <div className="text-center w-100 ">
+            <img
+              src={require("../../../assets/images/login.png")}
+              alt="Login User"
+              className="img-fluid"
+            />
+          </div>
         </Col>
-        <Col md={6} className={styles.formDiv}>
-          <Form onSubmit={handleSubmit}>
-            <h1>Login</h1>
-            <div className="line" />
-            <Form.Group controlId="formBasicEmail" className="mt-5">
-              {/* <Form.Label>Email address</Form.Label> */}
-              <Form.Control
-                type="text"
-                value={inputValue}
-                onChange={handleInputChange}
-                placeholder="Enter email/phone"
-              />
-            </Form.Group>
+        <Col md={6} className="d-flex">
+          <Formik
+            initialValues={{ emailOrPhone: "", password: "" }}
+            validationSchema={loginSchema}
+            onSubmit={(values, { setSubmitting }) => {
+              // Your form submission logic here
+              console.log("Form values:", values);
+              setSubmitting(false);
+            }}
+          >
+            {({ isSubmitting, errors, touched }) => (
+              <FormikForm onSubmit={handleSubmit} className="w-100">
+                <h1>Log In</h1>
+                <div className="line" />
 
-            <Form.Group controlId="formBasicPassword" className="mt-5">
-              {/* <Form.Label>Password</Form.Label> */}
-              <Form.Control type="password" placeholder="Password" />
-            </Form.Group>
+                <BootstrapForm.Group
+                  controlId="formBasicEmail"
+                  className="mt-5"
+                >
+                  <Field
+                    type="text"
+                    name="emailOrPhone"
+                    placeholder="Enter email/phone"
+                    className={`form-control ${
+                      touched.emailOrPhone && errors.emailOrPhone
+                        ? "is-invalid"
+                        : ""
+                    }`}
+                  />
+                  <ErrorMessage
+                    name="emailOrPhone"
+                    component="div"
+                    className="invalid-feedback"
+                  />
+                </BootstrapForm.Group>
 
-            <Button variant="primary" type="submit" className="m-5">
-              Login
-            </Button>
-          </Form>
+                <BootstrapForm.Group
+                  controlId="formBasicPassword"
+                  className="mt-5"
+                >
+                  <Field
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    className={`form-control ${
+                      touched.password && errors.password ? "is-invalid" : ""
+                    }`}
+                  />
+                  <ErrorMessage
+                    name="password"
+                    component="div"
+                    className="invalid-feedback"
+                  />
+                </BootstrapForm.Group>
+
+                <Button
+                  variant="primary"
+                  type="submit"
+                  className="m-5"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Logging in..." : "Login"}
+                </Button>
+              </FormikForm>
+            )}
+          </Formik>
         </Col>
       </Row>
     </Container>
